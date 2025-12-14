@@ -144,30 +144,70 @@ const DEFAULT_OG_IMAGE = "/images/og-default.svg";
 
 ## Syncing Posts
 
-Posts are synced to Convex at build time. To manually sync:
+Posts are synced to Convex. The sync script reads markdown files from `content/blog/` and `content/pages/`, then uploads them to your Convex database.
+
+### Environment Files
+
+| File                    | Purpose                                                  |
+| ----------------------- | -------------------------------------------------------- |
+| `.env.local`            | Development deployment URL (created by `npx convex dev`) |
+| `.env.production.local` | Production deployment URL (create manually)              |
+
+Both files are gitignored. Each developer creates their own.
+
+### Sync Commands
+
+| Command             | Target      | When to use                 |
+| ------------------- | ----------- | --------------------------- |
+| `npm run sync`      | Development | Local testing, new posts    |
+| `npm run sync:prod` | Production  | Deploy content to live site |
+
+**Development sync:**
 
 ```bash
 npm run sync
+```
+
+**Production sync:**
+
+First, create `.env.production.local` with your production Convex URL:
+
+```
+VITE_CONVEX_URL=https://your-prod-deployment.convex.cloud
+```
+
+Then sync:
+
+```bash
+npm run sync:prod
 ```
 
 ## Deployment
 
 ### Netlify
 
-1. Connect your repository to Netlify
-2. Set environment variables:
-   - `VITE_CONVEX_URL` - Your Convex deployment URL
-3. Update `netlify.toml` with your Convex HTTP URL (replace `YOUR_CONVEX_DEPLOYMENT`)
-4. Deploy with:
+For detailed setup, see the [Convex Netlify Deployment Guide](https://docs.convex.dev/production/hosting/netlify).
+
+1. Deploy Convex functions to production:
 
 ```bash
-npm run deploy
+npx convex deploy
 ```
+
+2. Connect your repository to Netlify
+3. Configure build settings:
+   - Build command: `npx convex deploy --cmd 'npm run build'`
+   - Publish directory: `dist`
+4. Add environment variable:
+   - `CONVEX_DEPLOY_KEY` - Generate from [Convex Dashboard](https://dashboard.convex.dev) > Project Settings > Deploy Key
+5. Update `netlify.toml` with your production Convex HTTP URL (replace `YOUR_CONVEX_DEPLOYMENT`)
+
+The `CONVEX_DEPLOY_KEY` lets Netlify automatically deploy functions and set `VITE_CONVEX_URL` on each build.
 
 ## Project Structure
 
 ```
-personal-blog/
+markdown-site/
 ├── content/blog/      # Markdown blog posts
 ├── convex/            # Convex backend
 │   ├── http.ts        # HTTP endpoints (sitemap, API, RSS)
@@ -186,6 +226,18 @@ personal-blog/
     ├── pages/         # Page components
     └── styles/        # Global CSS
 ```
+
+## Scripts Reference
+
+| Script                | Description                                  |
+| --------------------- | -------------------------------------------- |
+| `npm run dev`         | Start Vite dev server                        |
+| `npm run dev:convex`  | Start Convex dev backend                     |
+| `npm run sync`        | Sync posts to dev deployment                 |
+| `npm run sync:prod`   | Sync posts to production deployment          |
+| `npm run build`       | Build for production                         |
+| `npm run deploy`      | Sync + build (for manual deploys)            |
+| `npm run deploy:prod` | Deploy Convex functions + sync to production |
 
 ## Tech Stack
 
@@ -270,4 +322,7 @@ body {
 ```
 
 Replace the `font-family` property with your preferred font stack.
-# markdown-site
+
+## Source
+
+Fork this project: [github.com/waynesutton/markdown-site](https://github.com/waynesutton/markdown-site)

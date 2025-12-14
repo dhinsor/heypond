@@ -1,0 +1,261 @@
+---
+title: "Docs"
+slug: "docs"
+published: true
+order: 0
+---
+
+Reference documentation for setting up, customizing, and deploying this markdown site.
+
+## Quick start
+
+```bash
+git clone https://github.com/waynesutton/markdown-site.git
+cd markdown-site
+npm install
+npx convex dev
+npm run sync
+npm run dev
+```
+
+Open `http://localhost:5173` to view locally.
+
+## Requirements
+
+- Node.js 18+
+- Convex account (free at convex.dev)
+- Netlify account (free at netlify.com)
+
+## Project structure
+
+```
+markdown-site/
+├── content/
+│   ├── blog/           # Blog posts (.md)
+│   └── pages/          # Static pages (.md)
+├── convex/
+│   ├── schema.ts       # Database schema
+│   ├── posts.ts        # Post queries/mutations
+│   ├── pages.ts        # Page queries/mutations
+│   ├── http.ts         # API endpoints
+│   └── rss.ts          # RSS generation
+├── src/
+│   ├── components/     # React components
+│   ├── context/        # Theme context
+│   ├── pages/          # Route components
+│   └── styles/         # CSS
+├── public/
+│   ├── images/         # Static images
+│   ├── robots.txt      # Crawler rules
+│   └── llms.txt        # AI discovery
+└── netlify.toml        # Deployment config
+```
+
+## Content
+
+### Blog posts
+
+Create files in `content/blog/` with frontmatter:
+
+```markdown
+---
+title: "Post Title"
+description: "SEO description"
+date: "2025-01-15"
+slug: "url-path"
+published: true
+tags: ["tag1", "tag2"]
+readTime: "5 min read"
+image: "/images/og-image.png"
+---
+
+Content here...
+```
+
+| Field         | Required | Description           |
+| ------------- | -------- | --------------------- |
+| `title`       | Yes      | Post title            |
+| `description` | Yes      | SEO description       |
+| `date`        | Yes      | YYYY-MM-DD format     |
+| `slug`        | Yes      | URL path (unique)     |
+| `published`   | Yes      | `true` to show        |
+| `tags`        | Yes      | Array of strings      |
+| `readTime`    | No       | Display time estimate |
+| `image`       | No       | Open Graph image      |
+
+### Static pages
+
+Create files in `content/pages/` with frontmatter:
+
+```markdown
+---
+title: "Page Title"
+slug: "url-path"
+published: true
+order: 1
+---
+
+Content here...
+```
+
+| Field       | Required | Description               |
+| ----------- | -------- | ------------------------- |
+| `title`     | Yes      | Nav link text             |
+| `slug`      | Yes      | URL path                  |
+| `published` | Yes      | `true` to show            |
+| `order`     | No       | Nav order (lower = first) |
+
+### Syncing content
+
+```bash
+# Development
+npm run sync
+
+# Production
+npm run sync:prod
+```
+
+## Configuration
+
+### Site settings
+
+Edit `src/pages/Home.tsx`:
+
+```typescript
+const siteConfig = {
+  name: "Site Name",
+  title: "Tagline",
+  logo: "/images/logo.svg", // null to hide
+  intro: "Introduction text...",
+  bio: "Bio text...",
+  featuredEssays: [{ title: "Post Title", slug: "post-slug" }],
+  links: {
+    docs: "/docs",
+    convex: "https://convex.dev",
+  },
+};
+```
+
+### Theme
+
+Default: `tan`. Options: `dark`, `light`, `tan`, `cloud`.
+
+Edit `src/context/ThemeContext.tsx`:
+
+```typescript
+const DEFAULT_THEME: Theme = "tan";
+```
+
+### Font
+
+Edit `src/styles/global.css`:
+
+```css
+body {
+  /* Sans-serif */
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Serif (default) */
+  font-family: "New York", ui-serif, Georgia, serif;
+}
+```
+
+### Images
+
+| Image            | Location                       | Size     |
+| ---------------- | ------------------------------ | -------- |
+| Favicon          | `public/favicon.svg`           | 512x512  |
+| Site logo        | `public/images/logo.svg`       | 512x512  |
+| Default OG image | `public/images/og-default.svg` | 1200x630 |
+| Post images      | `public/images/`               | Any      |
+
+## API endpoints
+
+| Endpoint                       | Description             |
+| ------------------------------ | ----------------------- |
+| `/rss.xml`                     | RSS feed (descriptions) |
+| `/rss-full.xml`                | RSS feed (full content) |
+| `/sitemap.xml`                 | XML sitemap             |
+| `/api/posts`                   | JSON post list          |
+| `/api/post?slug=xxx`           | Single post (JSON)      |
+| `/api/post?slug=xxx&format=md` | Single post (markdown)  |
+
+## Deployment
+
+### Netlify setup
+
+1. Connect GitHub repo to Netlify
+2. Set build command: `npm run deploy`
+3. Set publish directory: `dist`
+4. Add env variable: `VITE_CONVEX_URL`
+
+### Convex production
+
+```bash
+npx convex deploy
+```
+
+### netlify.toml
+
+Replace `YOUR_CONVEX_DEPLOYMENT` with your deployment name:
+
+```toml
+[[redirects]]
+  from = "/rss.xml"
+  to = "https://YOUR_DEPLOYMENT.convex.site/rss.xml"
+  status = 200
+```
+
+## Convex schema
+
+```typescript
+// convex/schema.ts
+export default defineSchema({
+  posts: defineTable({
+    slug: v.string(),
+    title: v.string(),
+    description: v.string(),
+    content: v.string(),
+    date: v.string(),
+    published: v.boolean(),
+    tags: v.array(v.string()),
+    readTime: v.optional(v.string()),
+    image: v.optional(v.string()),
+    lastSyncedAt: v.number(),
+  })
+    .index("by_slug", ["slug"])
+    .index("by_published", ["published"]),
+
+  pages: defineTable({
+    slug: v.string(),
+    title: v.string(),
+    content: v.string(),
+    published: v.boolean(),
+    order: v.optional(v.number()),
+    lastSyncedAt: v.number(),
+  })
+    .index("by_slug", ["slug"])
+    .index("by_published", ["published"]),
+});
+```
+
+## Troubleshooting
+
+**Posts not appearing**
+
+- Check `published: true` in frontmatter
+- Run `npm run sync`
+- Verify in Convex dashboard
+
+**RSS/Sitemap errors**
+
+- Verify `netlify.toml` Convex URL
+- Test Convex HTTP URL directly
+- Check Convex function deployment
+
+**Build failures**
+
+- Verify `VITE_CONVEX_URL` is set
+- Check Node.js version (18+)
+- Review Netlify build logs

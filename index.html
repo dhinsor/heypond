@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="An open source markdown blog powered by Convex and Netlify. Fork it, customize it, ship it."
+    />
+    <meta name="author" content="Markdown Blog" />
+    <meta
+      name="keywords"
+      content="markdown blog, Convex, Netlify, React, TypeScript, open source, real-time"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#faf8f5" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Markdown Blog - Real-time Blog with Convex"
+    />
+    <meta
+      property="og:description"
+      content="An open source markdown blog powered by Convex and Netlify. Fork it, customize it, ship it."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-blog.netlify.app" />
+    <meta property="og:site_name" content="Markdown Blog" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Markdown Blog - Real-time Blog with Convex"
+    />
+    <meta
+      name="twitter:description"
+      content="An open source markdown blog powered by Convex and Netlify. Fork it, customize it, ship it."
+    />
+
+    <!-- RSS Feeds -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS Feed"
+      href="/rss.xml"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS Feed (Full Content)"
+      href="/rss-full.xml"
+    />
+
+    <!-- LLM and AI Discovery -->
+    <link rel="author" href="/llms.txt" />
+
+    <!-- JSON-LD Structured Data for Homepage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Markdown Blog",
+        "url": "https://your-blog.netlify.app",
+        "description": "An open source markdown blog powered by Convex and Netlify.",
+        "author": {
+          "@type": "Organization",
+          "name": "Markdown Blog",
+          "url": "https://your-blog.netlify.app"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://your-blog.netlify.app/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <title>Markdown Blog - Real-time Blog with Convex</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

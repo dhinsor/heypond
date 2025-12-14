@@ -1,0 +1,50 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## [1.0.0] - 2025-12-14
+
+### Added
+
+- Initial project setup with Vite, React, TypeScript
+- Convex backend with posts, pages, viewCounts, and siteConfig tables
+- Markdown blog post support with frontmatter parsing
+- Static pages support (About, Projects, Contact) with navigation
+- Four theme options: Dark, Light, Tan (default), Cloud
+- Font configuration option in global.css with serif (New York) as default
+- Syntax highlighting for code blocks using custom Prism themes
+- Year-grouped post list on home page
+- Individual post pages with share buttons
+- SEO optimization with dynamic sitemap at `/sitemap.xml`
+- JSON-LD structured data injection for blog posts
+- RSS feeds at `/rss.xml` and `/rss-full.xml` (full content for LLMs)
+- AI agent discovery with `llms.txt` following llmstxt.org standard
+- `robots.txt` with rules for AI crawlers
+- API endpoints for LLM access:
+  - `/api/posts` - JSON list of all posts
+  - `/api/post?slug=xxx` - Single post as JSON or markdown
+- Copy Page dropdown for sharing to ChatGPT, Claude, Cursor, VS Code
+- Open Graph and Twitter Card meta tags
+- Netlify edge function for social media crawler detection
+- Build-time markdown sync from `content/blog/` to Convex
+- Responsive design for mobile, tablet, and desktop
+
+### Security
+
+- All HTTP endpoints properly escape HTML and XML output
+- Convex queries use indexed lookups
+- External links use rel="noopener noreferrer"
+- No console statements in production code
+
+### Technical Details
+
+- React 18 with TypeScript
+- Convex for real-time database
+- react-markdown for rendering
+- react-syntax-highlighter for code blocks
+- date-fns for date formatting
+- lucide-react for icons
+- Netlify deployment with edge functions
+- SPA 404 fallback configured

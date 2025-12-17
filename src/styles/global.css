@@ -1,6 +1,9 @@
 /* CSS Variables for theming
    THEME SWITCHER: Default theme is "tan". To change default, edit src/context/ThemeContext.tsx
    Available themes: dark, light, tan, cloud */
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
 :root[data-theme="dark"] {
   --bg-primary: #111111;
   --bg-secondary: #1a1a1a;
@@ -99,17 +102,15 @@ body {
      Use "New York" for a serif font.
      Serif (New York): "New York", -apple-system-ui-serif, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif */
   font-family:
-    "New York",
-    -apple-system-ui-serif,
-    ui-serif,
-    Georgia,
-    Cambria,
-    "Times New Roman",
-    Times,
-    serif;
+    "Google Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.5;
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
@@ -212,8 +213,8 @@ body {
 .home-bio {
   font-size: 16px;
   color: var(--text-secondary);
-  margin-bottom: 16px;
-  line-height: 1.7;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 .home-featured {
@@ -438,6 +439,7 @@ body {
     opacity: 0;
     transform: translateY(-4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

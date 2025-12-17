@@ -4,25 +4,16 @@ import PostList from "../components/PostList";
 
 // Site configuration - customize this for your site
 const siteConfig = {
-  name: 'markdown "sync" site',
+  name: 'Pond Narongrit',
   title: "Real-time Site with Convex",
   // Optional logo/header image (place in public/images/, set to null to hide)
   logo: "/images/logo.svg" as string | null,
   intro: (
     <>
-      An open source markdown blog powered by Convex and deployed on Netlify.{" "}
-      <a
-        href="https://github.com/waynesutton/markdown-site"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="home-text-link"
-      >
-        Fork it
-      </a>
-      , customize it, ship it.
+      สวัสดีครับ ผมชื่อปอนด์ — ปัจจุบันเป็น Lead Product Designer อยู่ที่ Health at Home
     </>
   ),
-  bio: `Write in markdown, sync to a real-time database, and deploy in minutes. Every time you sync new posts, they appear immediately without redeploying. Built with React, TypeScript, and Convex for instant updates.`,
+  bio: `ที่นี่คุณจะได้พบกับงานเขียนเกี่ยวกับสิ่งต่างๆที่ผมกำลังสนใจหรือได้เรียนรู้ เช่น การออกแบบ, ปรัชญา, ปัญญาประดิษฐ์ และปัญหาชีวิต (รวมถึงเรื่องยากๆเพื่อโบยตีสมองตัวเอง) ซึ่งทั้งหมดถูกเขียนขึ้นโดยมนุษย์ผู้ที่มีอาการตกวงเล็บปิด และชอบเปลี่ยนความหมกหมุ่นไปเรื่อยๆ`,
   featuredEssays: [
     { title: "Setup Guide", slug: "setup-guide" },
     { title: "How to Publish", slug: "how-to-publish" },
@@ -85,35 +76,7 @@ export default function Home() {
       {/* Footer section */}
       <section className="home-footer">
         <p className="home-footer-text">
-          Built with{" "}
-          <a
-            href={siteConfig.links.convex}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Convex
-          </a>{" "}
-          for real-time sync and deployed on{" "}
-          <a
-            href={siteConfig.links.netlify}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Netlify
-          </a>
-          . Read the{" "}
-          <a
-            href="https://github.com/waynesutton/markdown-site"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            project on GitHub
-          </a>{" "}
-          to fork and deploy your own. View{" "}
-          <a href="/stats" className="home-text-link">
-            real-time site stats
-          </a>
-          .
+          ขอบคุณที่เข้ามาเยี่ยมชม ไม่ว่าคุณจะตั้งใจหรือหลงทางมาก็ตาม หวังว่าคุณจะพบกับสิ่งที่คุณตามหา หรือไม่ก็ยอมรับว่าคุณได้เสียเวลาไปกับงานเขียนของคนแปลกหน้าบนอินเทอร์เน็ต
         </p>
       </section>
     </div>

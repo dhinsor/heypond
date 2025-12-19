@@ -5,7 +5,7 @@ date: "2023-03-15"
 slug: "path-to-becoming-designer"
 published: true
 tags: ["UX/UI", "Design", "Career", "Identity", "Personal Development"]
-readTime: "3 min read"
+readTime: "3 min"
 ---
 
 > ชีวิตคือความซับซ้อน และทุกเรื่องไม่จำเป็นต้องเรียบง่ายเสมอไป ตราบใดที่ไม่สับสน

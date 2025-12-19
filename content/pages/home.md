@@ -1,6 +1,6 @@
 ---
-title: "Docs"
-slug: "docs"
+title: "Home"
+slug: "/"
 published: true
 order: 0
 ---

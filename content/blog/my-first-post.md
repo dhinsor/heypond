@@ -5,7 +5,7 @@ date: "2025-01-17"
 slug: "my-first-post"
 published: true
 tags: ["เริ่มต้น", "ทดสอบ"]
-readTime: "3 min read"
+readTime: "3 min"
 ---
 
 ![ทดสอบรูปใหม่](/images/monk-by-sea.jpg)

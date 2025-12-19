@@ -5,7 +5,7 @@ date: "2025-01-16"
 slug: "about-this-blog"
 published: true
 tags: ["convex", "netlify", "open-source", "markdown"]
-readTime: "4 min read"
+readTime: "4 min"
 ---
 
 # About This Markdown Site

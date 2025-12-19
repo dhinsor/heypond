@@ -22,7 +22,7 @@ export default function Layout({ children }: LayoutProps) {
             {pages.map((page) => (
               <Link
                 key={page.slug}
-                to={`/${page.slug}`}
+                to={page.slug.startsWith("/") ? page.slug : `/${page.slug}`}
                 className="page-nav-link"
               >
                 {page.title}

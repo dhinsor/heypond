@@ -49,6 +49,7 @@ export default function PostList({ posts }: PostListProps) {
               <li key={post._id} className="post-item">
                 <Link to={`/${post.slug}`} className="post-link">
                   <span className="post-title">{post.title}</span>
+                  {/*
                   <span className="post-meta">
                     {post.readTime && (
                       <span className="post-read-time">{post.readTime}</span>
@@ -56,7 +57,7 @@ export default function PostList({ posts }: PostListProps) {
                     <span className="post-date">
                       {format(parseISO(post.date), "MMMM d")}
                     </span>
-                  </span>
+                  </span>*/}
                 </Link>
               </li>
             ))}

@@ -101,78 +101,7 @@ const cursorDarkTheme: { [key: string]: React.CSSProperties } = {
   decorator: { color: "#dcdcaa" },
 };
 
-// Cursor Light Theme colors for syntax highlighting
-const cursorLightTheme: { [key: string]: React.CSSProperties } = {
-  'code[class*="language-"]': {
-    color: "#171717",
-    background: "#f5f5f5",
-    fontFamily:
-      "SF Mono, Monaco, Cascadia Code, Roboto Mono, Consolas, Courier New, monospace",
-    fontSize: "14px",
-    textAlign: "left" as const,
-    whiteSpace: "pre" as const,
-    wordSpacing: "normal",
-    wordBreak: "normal" as const,
-    wordWrap: "normal" as const,
-    lineHeight: "1.6",
-    tabSize: 4,
-    hyphens: "none" as const,
-  },
-  'pre[class*="language-"]': {
-    color: "#171717",
-    background: "#f5f5f5",
-    fontFamily:
-      "SF Mono, Monaco, Cascadia Code, Roboto Mono, Consolas, Courier New, monospace",
-    fontSize: "14px",
-    textAlign: "left" as const,
-    whiteSpace: "pre" as const,
-    wordSpacing: "normal",
-    wordBreak: "normal" as const,
-    wordWrap: "normal" as const,
-    lineHeight: "1.6",
-    tabSize: 4,
-    hyphens: "none" as const,
-    padding: "1.5em",
-    margin: "1.5em 0",
-    overflow: "auto" as const,
-    borderRadius: "8px",
-  },
-  comment: { color: "#6a737d", fontStyle: "italic" },
-  prolog: { color: "#6a737d" },
-  doctype: { color: "#6a737d" },
-  cdata: { color: "#6a737d" },
-  punctuation: { color: "#24292e" },
-  property: { color: "#005cc5" },
-  tag: { color: "#22863a" },
-  boolean: { color: "#005cc5" },
-  number: { color: "#005cc5" },
-  constant: { color: "#005cc5" },
-  symbol: { color: "#e36209" },
-  deleted: { color: "#b31d28", background: "#ffeef0" },
-  selector: { color: "#22863a" },
-  "attr-name": { color: "#6f42c1" },
-  string: { color: "#032f62" },
-  char: { color: "#032f62" },
-  builtin: { color: "#005cc5" },
-  inserted: { color: "#22863a", background: "#f0fff4" },
-  operator: { color: "#d73a49" },
-  entity: { color: "#6f42c1" },
-  url: { color: "#005cc5", textDecoration: "underline" },
-  variable: { color: "#e36209" },
-  atrule: { color: "#005cc5" },
-  "attr-value": { color: "#032f62" },
-  function: { color: "#6f42c1" },
-  "function-variable": { color: "#6f42c1" },
-  keyword: { color: "#d73a49" },
-  regex: { color: "#032f62" },
-  important: { color: "#d73a49", fontWeight: "bold" },
-  bold: { fontWeight: "bold" },
-  italic: { fontStyle: "italic" },
-  namespace: { opacity: 0.7 },
-  "class-name": { color: "#6f42c1" },
-  parameter: { color: "#24292e" },
-  decorator: { color: "#6f42c1" },
-};
+
 
 // Tan Theme colors for syntax highlighting
 const cursorTanTheme: { [key: string]: React.CSSProperties } = {
@@ -278,10 +207,6 @@ export default function BlogPost({ content }: BlogPostProps) {
 
   const getCodeTheme = () => {
     switch (theme) {
-      case "dark":
-        return cursorDarkTheme;
-      case "light":
-        return cursorLightTheme;
       case "tan":
         return cursorTanTheme;
       default:

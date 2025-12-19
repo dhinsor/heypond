@@ -1,5 +1,5 @@
 import { useTheme } from "../context/ThemeContext";
-import { Moon, Sun, Cloud } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { Half2Icon } from "@radix-ui/react-icons";
 
 // Theme toggle component using same icons as Better Todo app
@@ -12,13 +12,9 @@ export default function ThemeToggle() {
     switch (theme) {
       case "dark":
         return <Moon size={18} />;
-      case "light":
-        return <Sun size={18} />;
       case "tan":
         // Half2Icon from Radix uses different sizing
-        return <Half2Icon style={{ width: 18, height: 18 }} />;
-      case "cloud":
-        return <Cloud size={18} />;
+        return <Sun style={{ width: 18, height: 18 }} />;
     }
   };
 
@@ -27,12 +23,8 @@ export default function ThemeToggle() {
     switch (theme) {
       case "dark":
         return "Dark";
-      case "light":
-        return "Light";
       case "tan":
         return "Tan";
-      case "cloud":
-        return "Cloud";
     }
   };
 

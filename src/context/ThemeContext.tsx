@@ -1,7 +1,8 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 // Available theme options
-type Theme = "dark" | "light" | "tan" | "cloud";
+// Available theme options
+type Theme = "dark" | "tan";
 
 // Default theme for new users (tan matches warm aesthetic)
 const DEFAULT_THEME: Theme = "tan";
@@ -23,7 +24,7 @@ interface ThemeProviderProps {
 const getInitialTheme = (defaultTheme: Theme): Theme => {
   try {
     const saved = localStorage.getItem("blog-theme") as Theme;
-    if (saved && ["dark", "light", "tan", "cloud"].includes(saved)) {
+    if (saved && ["dark", "tan"].includes(saved)) {
       return saved;
     }
   } catch {
@@ -35,9 +36,7 @@ const getInitialTheme = (defaultTheme: Theme): Theme => {
 // Theme color values for meta tag
 const themeColors: Record<Theme, string> = {
   dark: "#111111",
-  light: "#ffffff",
   tan: "#faf8f5",
-  cloud: "#f5f5f5",
 };
 
 // Update meta theme-color tag for mobile browsers
@@ -63,9 +62,9 @@ export function ThemeProvider({ children, defaultTheme = DEFAULT_THEME }: ThemeP
     setThemeState(newTheme);
   };
 
-  // Cycle through themes: dark -> light -> tan -> cloud -> dark
+  // Cycle through themes: tan -> dark -> tan
   const toggleTheme = () => {
-    const themes: Theme[] = ["dark", "light", "tan", "cloud"];
+    const themes: Theme[] = ["tan", "dark"];
     const currentIndex = themes.indexOf(theme);
     const nextIndex = (currentIndex + 1) % themes.length;
     setThemeState(themes[nextIndex]);

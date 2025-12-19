@@ -5,7 +5,7 @@ date: "2025-01-14"
 slug: "setup-guide"
 published: true
 tags: ["convex", "netlify", "tutorial", "deployment"]
-readTime: "8 min read"
+readTime: "8 min"
 ---
 
 # Fork and Deploy Your Own Markdown Blog

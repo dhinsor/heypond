@@ -5,7 +5,7 @@ date: "2025-01-18"
 slug: "using-images-in-posts"
 published: true
 tags: ["images", "tutorial", "markdown", "open-graph"]
-readTime: "4 min read"
+readTime: "4 min"
 image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=630&fit=crop"
 ---
 

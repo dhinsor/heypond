@@ -5,7 +5,7 @@ date: "2025-01-17"
 slug: "markdown-with-code-examples"
 published: true
 tags: ["markdown", "tutorial", "code"]
-readTime: "5 min read"
+readTime: "5 min"
 ---
 
 # Writing Markdown with Code Examples

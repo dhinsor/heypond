@@ -5,7 +5,7 @@ date: "2025-01-17"
 slug: "how-to-publish"
 published: true
 tags: ["tutorial", "markdown", "cursor", "publishing"]
-readTime: "3 min read"
+readTime: "4 min"
 ---
 
 # How to Publish a Blog Post

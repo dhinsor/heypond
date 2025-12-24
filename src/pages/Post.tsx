@@ -4,8 +4,8 @@ import { api } from "../../convex/_generated/api";
 import BlogPost from "../components/BlogPost";
 import Footer from "../components/Footer";
 import { format, parseISO } from "date-fns";
-import { ArrowLeft, Link as LinkIcon, Rss } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ArrowLeft } from "lucide-react";
+import { useEffect } from "react";
 
 // Site configuration
 const SITE_URL = "https://markdowncms.netlify.app";
@@ -17,7 +17,6 @@ export default function Post() {
   // Check for page first, then post
   const page = useQuery(api.pages.getPageBySlug, slug ? { slug } : "skip");
   const post = useQuery(api.posts.getPostBySlug, slug ? { slug } : "skip");
-  const [copied, setCopied] = useState(false);
 
   // Update page title for static pages
   useEffect(() => {
@@ -156,12 +155,6 @@ export default function Post() {
     );
   }
 
-  const handleCopyLink = async () => {
-    const url = window.location.href;
-    await navigator.clipboard.writeText(url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
 
   // Render blog post with full metadata
@@ -172,20 +165,20 @@ export default function Post() {
       <article className="post-article">
         <header className="post-header">
           <h1 className="post-title">{post.title}</h1>
+          {post.description && (
+            <p className="post-description">{post.description}</p>
+          )}
           <div className="post-meta-header">
             <time className="post-date">
               {format(parseISO(post.date), "MMMM yyyy")}
             </time>
             {post.readTime && (
               <>
-                <span className="post-meta-separator">·</span>
+                <span className="post-meta-separator">•</span>
                 <span className="post-read-time">{post.readTime}</span>
               </>
             )}
           </div>
-          {post.description && (
-            <p className="post-description">{post.description}</p>
-          )}
         </header>
 
         <BlogPost content={post.content} />
@@ -201,36 +194,6 @@ export default function Post() {
             </div>
           )}
 
-          <div className="post-share">
-            <button
-              onClick={handleCopyLink}
-              className="share-button"
-              aria-label="Copy link"
-            >
-              <LinkIcon size={16} />
-              <span>{copied ? "Copied!" : "Copy link"}</span>
-            </button>
-            {/*
-            <button
-              onClick={handleShareTwitter}
-              className="share-button"
-              aria-label="Share on Twitter"
-            >
-              <Twitter size={16} />
-              <span>Tweet</span>
-            </button>
-            */}
-            <a
-              href="/rss.xml"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="share-button"
-              aria-label="RSS Feed"
-            >
-              <Rss size={16} />
-              <span>RSS</span>
-            </a>
-          </div>
 
           <Footer />
 

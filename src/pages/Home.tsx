@@ -8,19 +8,19 @@ const siteConfig = {
   name: 'Pond Narongrit',
   title: "Real-time Site with Convex",
   // Optional logo/header image (place in public/images/, set to null to hide)
-  logo: null,
+  logo: "/images/profile-image.jpg",
   intro: (
     <>
-      สวัสดีครับ ผมชื่อปอนด์ — ปัจจุบันเป็น Lead Product Designer อยู่ที่ <a href="https://healthathome.in.th/">Health at Home</a>
+      สวัสดีครับ ผมชื่อปอนด์ — ตอนนี้เป็น Lead Product Designer อยู่ที่ <a href="https://healthathome.in.th/">Health at Home</a>
     </>
   ),
-  bio: `ที่นี่คุณจะได้พบกับงานเขียนเกี่ยวกับสิ่งต่างๆที่ผมกำลังสนใจหรือได้เรียนรู้ ส่วนมากจะเกี่ยวกับการออกแบบ, ปรัชญา, ปัญญาประดิษฐ์ และสิ่งอื่นๆที่อยู่ระหว่างนั้น ซึ่งบรรจงเขียนขึ้นโดยมนุษย์ผู้ที่มักตกวงเล็บปิด และชอบเปลี่ยนความหมกหมุ่นไปเรื่อยๆเพื่อหลีกเลี่ยงอาการหน่ายชีวิต`,
+  bio: `ที่นี่เปรียบเสมือน Digital Gerden ของผม ซึ่งคุณจะได้พบกับงานเขียนเกี่ยวกับสิ่งต่างๆที่ผมสนใจ ส่วนใหญ่จะเกี่ยวกับ Design, AI, Technology, Philosophy และอะไรก็ตามที่อยู่ระหว่างนั้น`,
   featuredEssays: [
-    { title: "เกี่ยวกับผมแบบพอสังเขป", slug: "about" },
+    { title: "เกี่ยวกับผมแบบย่อ", slug: "about" },
     { title: "ว่าด้วยการเป็นนักออกแบบ UX ที่ดี", slug: "on-good-ux-designer" },
     { title: "อยู่อย่างออฟไลน์", slug: "offline-living" },
     { title: "Heirloom Engineering", slug: "the-beginning-of-heirloom" },
-    { title: "ซับซ้อนได้ แต่ต้องไม่สับสน", slug: "the-beginning-of-heirloom" },
+    { title: "Complexity ซับซ้อนได้แต่ต้องไม่สับสน", slug: "the-beginning-of-heirloom" },
   ],
   // Links for footer section
   links: {
@@ -65,7 +65,8 @@ export default function Home() {
             ))}
           </ul>
         </div>
-        <p className="home-intro">หากต้องการพูดคุยหรือมีข้อเสนอแนะใดๆ สามารถติดต่อมาได้ที่ pond@hey.com หรือ<a href="/contact">ช่องทางอื่น</a>ตามความสะดวกได้เลย (โอกาสตอบกลับอาจน้อยกว่าอีเมล)</p>
+        {/* <p className="home-intro"><a href="/blog">งานเขียนทั้งหมด</a></p> */}
+        <p className="home-intro">หากต้องการพูดคุยหรือมีข้อเสนอแนะใดๆ สามารถเมลมาที่ <a href="mailto:pond@hey.com">pond@hey.com</a> ได้เลยนะครับ</p>
       </header>
 
       {/* Blog posts section moved to /blog */}

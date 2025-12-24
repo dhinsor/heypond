@@ -181,15 +181,17 @@ pre {
 
 /* Site logo on homepage */
 .home-logo {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 10px;
-  border-radius: 8px;
+  width: 80px;
+  height: 80px;
+  aspect-ratio: 1/1;
+  border-radius: 80px;
+  margin-bottom: 16px;
+  object-fit: cover;
 }
 
 .home-name {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 24px;
   letter-spacing: -0.02em;
 }
@@ -293,7 +295,7 @@ pre {
   letter-spacing: -0.2px;
   font-weight: 400;
   color: var(--text-muted);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .posts {
@@ -301,7 +303,7 @@ pre {
 }
 
 .post-item {
-  margin-bottom: 4px;
+  margin-bottom: 0px;
 }
 
 .post-link {
@@ -325,6 +327,8 @@ pre {
   font-weight: 400;
   flex: 1;
   min-width: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .post-link:hover .post-title {
@@ -343,10 +347,14 @@ pre {
 
 .post-read-time {
   color: var(--text-muted);
+  font-family: "Google Sans Code", monospace;
+  letter-spacing: -0.2px;
 }
 
 .post-date {
   color: var(--text-muted);
+  font-family: "Google Sans Code", monospace;
+  letter-spacing: -0.2px;
   /* 
   min-width: 80px;
   text-align: right;
@@ -377,7 +385,7 @@ pre {
 
 .page-title {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   margin-bottom: 40px;
   line-height: 1.2;
@@ -538,7 +546,7 @@ pre {
 /* Post page article title */
 .post-header .post-title {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   margin-bottom: 24px;
   line-height: 1.2;
@@ -550,16 +558,19 @@ pre {
   gap: 8px;
   font-size: 15px;
   color: var(--text-muted);
+  margin-top: 16px;
 }
 
 .post-meta-separator {
   color: var(--text-muted);
+  font-family: "Google Sans Code", monospace;
+  letter-spacing: -0.2px;
 }
 
 .post-description {
   font-size: 17px;
   color: var(--text-secondary);
-  margin-top: 20px;
+  margin-top: 0;
   line-height: 1.6;
 }
 
@@ -792,6 +803,8 @@ pre {
 .post-tag {
   font-size: 15px;
   color: var(--text-muted);
+  font-family: "Google Sans Code", monospace;
+  letter-spacing: -0.2px;
   /*
   background-color: var(--bg-secondary);
   padding: 4px 12px;
@@ -832,19 +845,31 @@ pre {
 .home-footer {
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
+  /*border-top: 1px solid var(--border-color);*/
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.home-footer-text {
+.home-footer-social {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-social-link {
   color: var(--text-muted);
+  text-decoration: none;
   font-size: 15px;
-  line-height: 1.5;
   font-family: "Google Sans Code", monospace;
   letter-spacing: -0.2px;
-  font-style: italic;
+  transition: color 0.2s ease;
+}
+
+.footer-social-link:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .home-footer-text-copyright {
@@ -855,15 +880,7 @@ pre {
   letter-spacing: -0.2px;
 }
 
-.home-footer-text a {
-  color: var(--text-secondary);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
 
-.home-footer-text a:hover {
-  color: var(--link-hover);
-}
 
 /* Responsive styles */
 @media (max-width: 768px) {

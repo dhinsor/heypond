@@ -5,7 +5,7 @@ published: true
 order: 1
 ---
 
-สวัสดีครับ ผมชื่อปอนด์ ปัจจุบันเป็น Lead Product Designer อยู่ที่ Health at Home สตาร์ทอัพสาย Health-tech สัญชาติไทยที่คิดการใหญ่และทะเยอทะยานที่สุดในย่าน
+สวัสดีครับ ผมชื่อปอนด์ ปัจจุบันเป็น Lead Product Designer อยู่ที่ Health at Home สตาร์ทอัพสาย Health-tech สัญชาติไทยที่คิดการใหญ่และทะเยอทะยานที่สุดในย่านบรรทัดทอง
 
 ### Work
 

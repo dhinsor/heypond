@@ -1,11 +1,10 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import BlogPost from "../components/BlogPost";
 import Footer from "../components/Footer";
-import CopyPageDropdown from "../components/CopyPageDropdown";
 import { format, parseISO } from "date-fns";
-import { ArrowLeft, Link as LinkIcon, Twitter, Rss } from "lucide-react";
+import { ArrowLeft, Link as LinkIcon, Rss } from "lucide-react";
 import { useState, useEffect } from "react";
 
 // Site configuration
@@ -15,7 +14,6 @@ const DEFAULT_OG_IMAGE = "/images/og-default.svg";
 
 export default function Post() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   // Check for page first, then post
   const page = useQuery(api.pages.getPageBySlug, slug ? { slug } : "skip");
   const post = useQuery(api.posts.getPostBySlug, slug ? { slug } : "skip");
@@ -165,30 +163,11 @@ export default function Post() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleShareTwitter = () => {
-    const text = encodeURIComponent(post.title);
-    const url = encodeURIComponent(window.location.href);
-    window.open(
-      `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
-      "_blank",
-    );
-  };
 
   // Render blog post with full metadata
   return (
     <div className="post-page">
-      <nav className="post-nav">
-        <button onClick={() => navigate("/")} className="back-button">
-          <ArrowLeft size={16} />
-          <span>Back</span>
-        </button>
-        {/* Copy page dropdown for sharing */}
-        {/* <CopyPageDropdown
-          title={post.title}
-          content={post.content}
-          url={window.location.href}
-        /> */}
-      </nav>
+
 
       <article className="post-article">
         <header className="post-header">

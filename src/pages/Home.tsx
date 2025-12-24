@@ -13,7 +13,7 @@ const siteConfig = {
       สวัสดีครับ ผมชื่อปอนด์ — ปัจจุบันเป็น Lead Product Designer อยู่ที่ Health at Home
     </>
   ),
-  bio: `ที่นี่คุณจะได้พบกับงานเขียนเกี่ยวกับสิ่งต่างๆที่ผมกำลังสนใจหรือได้เรียนรู้ เช่น การออกแบบ, ปรัชญา, ปัญญาประดิษฐ์ และปัญหาชีวิต (รวมถึงเรื่องยากๆเพื่อโบยตีสมองตัวเอง) ซึ่งทั้งหมดถูกเขียนขึ้นโดยมนุษย์ผู้ที่มีอาการตกวงเล็บปิด และชอบเปลี่ยนความหมกหมุ่นไปเรื่อยๆ`,
+  bio: `ที่นี่คุณจะได้พบกับงานเขียนเกี่ยวกับสิ่งต่างๆที่ผมกำลังสนใจหรือได้เรียนรู้ ส่วนมากจะเกี่ยวกับการออกแบบ, ปรัชญา, ปัญญาประดิษฐ์ และสิ่งอื่นๆที่อยู่ระหว่างนั้น ซึ่งบรรจงเขียนขึ้นโดยมนุษย์ผู้ที่มักตกวงเล็บปิด และชอบเปลี่ยนความหมกหมุ่นไปเรื่อยๆเพื่อหลีกเลี่ยงอาการหน่ายชีวิต`,
   featuredEssays: [
     { title: "Setup Guide", slug: "setup-guide" },
     { title: "How to Publish", slug: "how-to-publish" },
@@ -51,7 +51,7 @@ export default function Home() {
 
         {/* Featured essays section */}
         <div className="home-featured">
-          <p className="home-featured-intro">Get started:</p>
+          <p className="home-featured-intro">บทความแนะนำ</p>
           <ul className="home-featured-list">
             {siteConfig.featuredEssays.map((essay) => (
               <li key={essay.slug}>
@@ -67,7 +67,7 @@ export default function Home() {
       {/* Blog posts section - no loading state to avoid flash (Convex syncs instantly) */}
       <section id="posts" className="home-posts">
         {posts === undefined ? null : posts.length === 0 ? (
-          <p className="no-posts">No posts yet. Check back soon!</p>
+          <p className="no-posts">ยังไม่มีบทความที่นี่ ไว้กลับมาใหม่อีกครั้งนะ!</p>
         ) : (
           <PostList posts={posts} />
         )}
@@ -76,7 +76,8 @@ export default function Home() {
       {/* Footer section */}
       <section className="home-footer">
         <p className="home-footer-text">
-          ขอบคุณที่เข้ามาเยี่ยมชม ไม่ว่าคุณจะตั้งใจหรือหลงทางมาก็ตาม หวังว่าคุณจะพบกับสิ่งที่คุณตามหา หรือไม่ก็ยอมรับว่าคุณได้เสียเวลาไปกับงานเขียนของคนแปลกหน้าบนอินเทอร์เน็ต
+          เว็บไซต์นี้สร้างด้วย React, Vite, <a href="https://convex.dev">Convex</a> และ deploy บน <a href="https://netlify.com">Netlify</a>. <br />
+          ©{new Date().getFullYear()} Pond Narongrit Promburee. All rights reserved.
         </p>
       </section>
     </div>

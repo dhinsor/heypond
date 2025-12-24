@@ -5,7 +5,10 @@ published: true
 order: 3
 ---
 
-You found the contact page. Nice.
+ผมพยายามหลีกเลี่ยงในการจัดนิทรรศกาลชีวิตบน แต่คุณสามารถติดตามผมได้ที่นี่
+- Facebook
+- Github
+- 
 
 ## The technical way
 

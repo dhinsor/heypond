@@ -133,11 +133,11 @@ export default function Post() {
             <span>Back</span>
           </button>
           {/* Copy page dropdown for static pages */}
-          <CopyPageDropdown
+          {/* <CopyPageDropdown
             title={page.title}
             content={page.content}
             url={window.location.href}
-          />
+          /> */}
         </nav>
 
         <article className="post-article">
@@ -192,11 +192,11 @@ export default function Post() {
           <span>Back</span>
         </button>
         {/* Copy page dropdown for sharing */}
-        <CopyPageDropdown
+        {/* <CopyPageDropdown
           title={post.title}
           content={post.content}
           url={window.location.href}
-        />
+        /> */}
       </nav>
 
       <article className="post-article">
@@ -221,6 +221,16 @@ export default function Post() {
         <BlogPost content={post.content} />
 
         <footer className="post-footer">
+          {post.tags && post.tags.length > 0 && (
+            <div className="post-tags">
+              {post.tags.map((tag) => (
+                <span key={tag} className="post-tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
           <div className="post-share">
             <button
               onClick={handleCopyLink}
@@ -230,6 +240,7 @@ export default function Post() {
               <LinkIcon size={16} />
               <span>{copied ? "Copied!" : "Copy link"}</span>
             </button>
+            {/*
             <button
               onClick={handleShareTwitter}
               className="share-button"
@@ -238,6 +249,7 @@ export default function Post() {
               <Twitter size={16} />
               <span>Tweet</span>
             </button>
+            */}
             <a
               href="/rss.xml"
               target="_blank"
@@ -250,15 +262,12 @@ export default function Post() {
             </a>
           </div>
 
-          {post.tags && post.tags.length > 0 && (
-            <div className="post-tags">
-              {post.tags.map((tag) => (
-                <span key={tag} className="post-tag">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
+          <section className="home-footer">
+            <p className="home-footer-text">
+              © 2025 Pond Narongrit. All rights reserved.
+            </p>
+          </section>
+
         </footer>
       </article>
     </div>

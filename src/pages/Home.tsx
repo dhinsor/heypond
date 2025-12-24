@@ -1,6 +1,7 @@
-import { useQuery } from "convex/react";
-import { api } from "../../convex/_generated/api";
-import PostList from "../components/PostList";
+// import { useQuery } from "convex/react";
+// import { api } from "../../convex/_generated/api";
+// import PostList from "../components/PostList";
+import Footer from "../components/Footer";
 
 // Site configuration - customize this for your site
 const siteConfig = {
@@ -10,14 +11,15 @@ const siteConfig = {
   logo: "/images/logo.svg" as string | null,
   intro: (
     <>
-      สวัสดีครับ ผมชื่อปอนด์ — ปัจจุบันเป็น Lead Product Designer อยู่ที่ Health at Home
+      สวัสดีครับ ผมชื่อปอนด์ — ปัจจุบันเป็น Lead Product Designer อยู่ที่ <a href="https://healthathome.in.th/">Health at Home</a>
     </>
   ),
   bio: `ที่นี่คุณจะได้พบกับงานเขียนเกี่ยวกับสิ่งต่างๆที่ผมกำลังสนใจหรือได้เรียนรู้ ส่วนมากจะเกี่ยวกับการออกแบบ, ปรัชญา, ปัญญาประดิษฐ์ และสิ่งอื่นๆที่อยู่ระหว่างนั้น ซึ่งบรรจงเขียนขึ้นโดยมนุษย์ผู้ที่มักตกวงเล็บปิด และชอบเปลี่ยนความหมกหมุ่นไปเรื่อยๆเพื่อหลีกเลี่ยงอาการหน่ายชีวิต`,
   featuredEssays: [
-    { title: "Setup Guide", slug: "setup-guide" },
-    { title: "How to Publish", slug: "how-to-publish" },
-    { title: "About This Site", slug: "about-this-blog" },
+    { title: "เกี่ยวกับผมแบบพอสังเขป", slug: "about" },
+    { title: "ว่าด้วยการเป็นนักออกแบบ UX ที่ดี", slug: "on-good-ux-designer" },
+    { title: "อยู่อย่างออฟไลน์", slug: "offline-living" },
+    { title: "Heirloom Engineering", slug: "the-beginning-of-heirloom" },
   ],
   // Links for footer section
   links: {
@@ -29,7 +31,7 @@ const siteConfig = {
 
 export default function Home() {
   // Fetch published posts from Convex
-  const posts = useQuery(api.posts.getAllPosts);
+  // const posts = useQuery(api.posts.getAllPosts);
 
   return (
     <div className="home">
@@ -62,24 +64,14 @@ export default function Home() {
             ))}
           </ul>
         </div>
+        <p className="home-intro">หรืออ่านงานเขียนทั้งหมดได้ที่ <a href="/blog">Blog</a> </p>
+        <p className="home-intro">หากต้องการพูดคุยหรือมีข้อเสนอแนะใดๆ สามารถติดต่อมาได้ที่ pond@hey.com หรือ<a href="/contact">ช่องทางอื่น</a>ตามความสะดวกได้เลย (โอกาสตอบกลับอาจน้อยกว่าอีเมล)</p>
       </header>
 
-      {/* Blog posts section - no loading state to avoid flash (Convex syncs instantly) */}
-      <section id="posts" className="home-posts">
-        {posts === undefined ? null : posts.length === 0 ? (
-          <p className="no-posts">ยังไม่มีบทความที่นี่ ไว้กลับมาใหม่อีกครั้งนะ!</p>
-        ) : (
-          <PostList posts={posts} />
-        )}
-      </section>
+      {/* Blog posts section moved to /blog */}
 
       {/* Footer section */}
-      <section className="home-footer">
-        <p className="home-footer-text">
-          เว็บไซต์นี้สร้างด้วย React, Vite, <a href="https://convex.dev">Convex</a> และ deploy บน <a href="https://netlify.com">Netlify</a>. <br />
-          ©{new Date().getFullYear()} Pond Narongrit Promburee. All rights reserved.
-        </p>
-      </section>
+      <Footer />
     </div>
   );
 }

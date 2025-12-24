@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import BlogPost from "../components/BlogPost";
+import Footer from "../components/Footer";
 import CopyPageDropdown from "../components/CopyPageDropdown";
 import { format, parseISO } from "date-fns";
 import { ArrowLeft, Link as LinkIcon, Twitter, Rss } from "lucide-react";
@@ -126,26 +127,16 @@ export default function Post() {
   // If it's a static page, render simplified view
   if (page) {
     return (
-      <div className="post-page">
-        <nav className="post-nav">
-          <button onClick={() => navigate("/")} className="back-button">
-            <ArrowLeft size={16} />
-            <span>Back</span>
-          </button>
-          {/* Copy page dropdown for static pages */}
-          {/* <CopyPageDropdown
-            title={page.title}
-            content={page.content}
-            url={window.location.href}
-          /> */}
-        </nav>
+      <div className="blog-page">
+
 
         <article className="post-article">
           <header className="post-header">
-            <h1 className="post-title">{page.title}</h1>
+            <h1 className="page-title">{page.title}</h1>
           </header>
 
           <BlogPost content={page.content} />
+          <Footer />
         </article>
       </div>
     );
@@ -262,11 +253,7 @@ export default function Post() {
             </a>
           </div>
 
-          <section className="home-footer">
-            <p className="home-footer-text">
-              © 2025 Pond Narongrit. All rights reserved.
-            </p>
-          </section>
+          <Footer />
 
         </footer>
       </article>

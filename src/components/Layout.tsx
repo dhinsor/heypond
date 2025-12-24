@@ -19,15 +19,36 @@ export default function Layout({ children }: LayoutProps) {
         {/* Page navigation links (optional pages like About, Projects, Contact) */}
         {pages && pages.length > 0 && (
           <nav className="page-nav">
-            {pages.map((page) => (
-              <Link
-                key={page.slug}
-                to={page.slug.startsWith("/") ? page.slug : `/${page.slug}`}
-                className="page-nav-link"
-              >
-                {page.title}
-              </Link>
-            ))}
+            {/* Home link first */}
+            {pages
+              .filter((page) => page.slug === "/" || page.slug === "home")
+              .map((page) => (
+                <Link
+                  key={page.slug}
+                  to="/"
+                  className="page-nav-link"
+                >
+                  {page.title}
+                </Link>
+              ))}
+
+            {/* Blog link second */}
+            <Link to="/blog" className="page-nav-link">
+              Blog
+            </Link>
+
+            {/* Other pages */}
+            {pages
+              .filter((page) => page.slug !== "/" && page.slug !== "home")
+              .map((page) => (
+                <Link
+                  key={page.slug}
+                  to={page.slug.startsWith("/") ? page.slug : `/${page.slug}`}
+                  className="page-nav-link"
+                >
+                  {page.title}
+                </Link>
+              ))}
           </nav>
         )}
         {/* Theme toggle */}

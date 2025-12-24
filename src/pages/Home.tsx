@@ -8,7 +8,7 @@ const siteConfig = {
   name: 'Pond Narongrit',
   title: "Real-time Site with Convex",
   // Optional logo/header image (place in public/images/, set to null to hide)
-  logo: "/images/logo.svg" as string | null,
+  logo: null,
   intro: (
     <>
       สวัสดีครับ ผมชื่อปอนด์ — ปัจจุบันเป็น Lead Product Designer อยู่ที่ <a href="https://healthathome.in.th/">Health at Home</a>
@@ -20,6 +20,7 @@ const siteConfig = {
     { title: "ว่าด้วยการเป็นนักออกแบบ UX ที่ดี", slug: "on-good-ux-designer" },
     { title: "อยู่อย่างออฟไลน์", slug: "offline-living" },
     { title: "Heirloom Engineering", slug: "the-beginning-of-heirloom" },
+    { title: "ซับซ้อนได้ แต่ต้องไม่สับสน", slug: "the-beginning-of-heirloom" },
   ],
   // Links for footer section
   links: {
@@ -53,7 +54,7 @@ export default function Home() {
 
         {/* Featured essays section */}
         <div className="home-featured">
-          <p className="home-featured-intro">บทความแนะนำ</p>
+          <p className="home-featured-intro">งานเขียนแนะนำ</p>
           <ul className="home-featured-list">
             {siteConfig.featuredEssays.map((essay) => (
               <li key={essay.slug}>
@@ -64,7 +65,6 @@ export default function Home() {
             ))}
           </ul>
         </div>
-        <p className="home-intro">หรืออ่านงานเขียนทั้งหมดได้ที่ <a href="/blog">Blog</a> </p>
         <p className="home-intro">หากต้องการพูดคุยหรือมีข้อเสนอแนะใดๆ สามารถติดต่อมาได้ที่ pond@hey.com หรือ<a href="/contact">ช่องทางอื่น</a>ตามความสะดวกได้เลย (โอกาสตอบกลับอาจน้อยกว่าอีเมล)</p>
       </header>
 

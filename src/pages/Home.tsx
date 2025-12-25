@@ -9,6 +9,7 @@ const siteConfig = {
   title: "Real-time Site with Convex",
   // Optional logo/header image (place in public/images/, set to null to hide)
   logo: "/images/profile-image.jpg",
+  logoAlt: "Pond Narongrit's profile picture",
   intro: (
     <>
       สวัสดีครับ ผมชื่อปอนด์ — ตอนนี้เป็น Lead Product Designer อยู่ที่ <a href="https://healthathome.in.th/">Health at Home</a>
@@ -41,7 +42,7 @@ export default function Home() {
         {siteConfig.logo && (
           <img
             src={siteConfig.logo}
-            alt={siteConfig.name}
+            alt={siteConfig.logoAlt || siteConfig.name}
             className="home-logo"
           />
         )}

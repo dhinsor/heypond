@@ -20,17 +20,10 @@ export default function Layout({ children }: LayoutProps) {
         {pages && pages.length > 0 && (
           <nav className="page-nav">
             {/* Home link first */}
-            {pages
-              .filter((page) => page.slug === "/" || page.slug === "home")
-              .map((page) => (
-                <Link
-                  key={page.slug}
-                  to="/"
-                  className="page-nav-link"
-                >
-                  {page.title}
-                </Link>
-              ))}
+            {/* Home link */}
+            <Link to="/" className="page-nav-link">
+              Home
+            </Link>
 
             {/* Blog link second */}
             <Link to="/blog" className="page-nav-link">

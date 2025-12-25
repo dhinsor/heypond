@@ -19,7 +19,6 @@ const siteConfig = {
     { title: "เกี่ยวกับผมแบบย่อ", slug: "about" },
     { title: "ว่าด้วยการเป็นนักออกแบบ UX ที่ดี", slug: "on-good-ux-designer" },
     { title: "อยู่อย่างออฟไลน์", slug: "offline-living" },
-    { title: "Heirloom Engineering", slug: "the-beginning-of-heirloom" },
     { title: "Complexity ซับซ้อนได้แต่ต้องไม่สับสน", slug: "the-beginning-of-heirloom" },
   ],
   // Links for footer section

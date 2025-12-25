@@ -4,7 +4,7 @@ import { api } from "../../convex/_generated/api";
 import BlogPost from "../components/BlogPost";
 import Footer from "../components/Footer";
 import { format, parseISO } from "date-fns";
-import { ArrowLeft } from "lucide-react";
+import ArrowLeft from "lucide-react/dist/esm/icons/arrow-left";
 import { useEffect } from "react";
 
 // Site configuration

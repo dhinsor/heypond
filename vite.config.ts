@@ -12,6 +12,15 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     build: {
       outDir: "dist",
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            "react-vendor": ["react", "react-dom", "react-router-dom"],
+            "ui-vendor": ["lucide-react", "date-fns"],
+            "markdown-vendor": ["react-markdown", "react-syntax-highlighter", "remark-gfm", "remark-breaks"],
+          },
+        },
+      },
     },
     server: {
       proxy: {

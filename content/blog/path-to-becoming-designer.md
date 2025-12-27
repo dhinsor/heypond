@@ -4,7 +4,7 @@ description: "ว่าด้วยการสืบหาที่มาขอ
 date: "2023-03-15"
 slug: "path-to-becoming-designer"
 published: true
-tags: ["UX/UI", "Design", "Career", "Identity", "Personal Development"]
+tags: ["#uxui", "#designer", "career", "self-development"]
 readTime: "3 min"
 ---
 

@@ -115,9 +115,9 @@ pre {
   z-index: 100;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
-  /* flex: 1; removed */
+  min-height: 64px;
   max-width: 720px;
   width: 100%;
   margin: 0 auto;
@@ -148,6 +148,8 @@ pre {
 .theme-toggle-container {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .theme-toggle {

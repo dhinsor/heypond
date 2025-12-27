@@ -4,7 +4,7 @@ description: "บันทึกต่างๆเกี่ยวกับ proje
 date: "2025-11-30"
 slug: "the-beginning-of-heirloom"
 published: true
-tags: ["#work", "#project", "#ai"]
+tags: [“#heirloom”, “#side-project", "#ai"]
 readTime: "3 min"
 ---
 

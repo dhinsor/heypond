@@ -15,37 +15,46 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="layout">
       {/* Top navigation bar with page links and theme toggle */}
-      <div className="top-nav">
+      <div
+        className="top-nav"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          minHeight: '64px'
+        }}
+      >
         {/* Page navigation links (optional pages like About, Projects, Contact) */}
-        {pages && pages.length > 0 && (
-          <nav className="page-nav">
-            {/* Home link first */}
-            {/* Home link */}
-            <Link to="/" className="page-nav-link">
-              Home
-            </Link>
+        <nav className="page-nav" style={{ display: 'flex', alignItems: 'center', gap: '16px', flex: 1 }}>
+          <Link to="/" className="page-nav-link">
+            Home
+          </Link>
 
-            {/* Blog link second */}
-            <Link to="/blog" className="page-nav-link">
-              Blog
-            </Link>
+          <Link to="/blog" className="page-nav-link">
+            Blog
+          </Link>
 
-            {/* Other pages */}
-            {pages
-              .filter((page) => page.slug !== "/" && page.slug !== "home")
-              .map((page) => (
-                <Link
-                  key={page.slug}
-                  to={page.slug.startsWith("/") ? page.slug : `/${page.slug}`}
-                  className="page-nav-link"
-                >
-                  {page.title}
-                </Link>
-              ))}
-          </nav>
-        )}
+          {/* Other dynamic pages */}
+          {pages && pages
+            .filter((page) => page.slug !== "/" && page.slug !== "home")
+            .map((page) => (
+              <Link
+                key={page.slug}
+                to={page.slug.startsWith("/") ? page.slug : `/${page.slug}`}
+                className="page-nav-link"
+              >
+                {page.title}
+              </Link>
+            ))}
+        </nav>
         {/* Theme toggle */}
-        <div className="theme-toggle-container">
+        <div
+          className="theme-toggle-container"
+          style={{
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
           <ThemeToggle />
         </div>
       </div>

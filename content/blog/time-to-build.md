@@ -1,10 +1,10 @@
 ---
-title: “หากสถาปนิคฉาบปูนเป็น?”
-description: “จะเกิดอะไรขึ้นถ้านักออกแบบสามารถสร้างของได้ด้วยตัวเอง”
+title: "หัวข้อ"
+description: "คำอธิบาย"
 date: "2025-01-16"
-slug: "about-this-blog"
+slug: "testing"
 published: false
-tags: ["convex", "netlify", "open-source", "markdown"]
+tags: ["testing"]
 readTime: "4 min"
 ---
 

@@ -12,10 +12,10 @@ const siteConfig = {
   logoAlt: "Pond Narongrit's profile picture",
   intro: (
     <>
-      สวัสดีครับ ผมชื่อปอนด์ — ตอนนี้เป็น Lead Product Designer อยู่ที่ <a href="https://healthathome.in.th/">Health at Home</a>
+      สวัสดีครับ! ผมปอนด์ — ปัจจุบันเป็น Lead Product Designer อยู่ที่ <a href="https://healthathome.in.th/">Health at Home</a>
     </>
   ),
-  bio: `ที่นี่เปรียบเสมือน Digital Gerden ของผม ซึ่งคุณจะได้พบกับงานเขียนเกี่ยวกับสิ่งต่างๆที่ผมสนใจ ส่วนใหญ่จะเกี่ยวกับ Design, AI, Technology, Philosophy และอะไรก็ตามที่อยู่ระหว่างนั้น`,
+  bio: `ยินดีต้อนรับสู่มุมอับเล็กๆของอินเตอร์เน็ต ที่นี่คุณจะได้พบกับงานเขียนที่เกิดจากความสนใจต่อสิ่งต่างๆ ส่วนใหญ่เกี่ยวกับ Design, Technology, Philosophy และ AI รวมถึงสิ่งอื่นๆระหว่างนั้น`,
   featuredEssays: [
     { title: "เกี่ยวกับผมแบบย่อ", slug: "about" },
     { title: "ว่าด้วยการเป็นนักออกแบบ UX ที่ดี", slug: "on-good-ux-designer" },
@@ -54,7 +54,7 @@ export default function Home() {
 
         {/* Featured essays section */}
         <div className="home-featured">
-          <p className="home-featured-intro">งานเขียนแนะนำ</p>
+          <p className="home-featured-intro">งานเขียนที่ผมแนะนำ:</p>
           <ul className="home-featured-list">
             {siteConfig.featuredEssays.map((essay) => (
               <li key={essay.slug}>
@@ -66,7 +66,7 @@ export default function Home() {
           </ul>
         </div>
         {/* <p className="home-intro"><a href="/blog">งานเขียนทั้งหมด</a></p> */}
-        <p className="home-intro">หากต้องการพูดคุยหรือมีข้อเสนอแนะใดๆ สามารถเมลมาที่ <a href="mailto:pond@hey.com">pond@hey.com</a> ได้เลยนะครับ</p>
+        <p className="home-intro">หากมีคำถามหรือต้องการแบ่งปันสิ่งใดๆ สามารถติดต่อมาได้ที่ <a href="mailto:pond@hey.com">pond@hey.com</a> </p>
       </header>
 
       {/* Blog posts section moved to /blog */}

@@ -4,7 +4,7 @@ description: "คำแนะนำ, คุณสมบัติ และวิ
 date: "2024-06-24"
 slug: "on-good-ux-designer"
 published: true
-tags: ["#UX/UI", "#Design", "#Career", "#Guidelines"]
+tags: ["#uxui", "#designer", "#career", "#self-development"]
 readTime: "3 min"
 ---
 

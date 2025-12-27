@@ -1,5 +1,6 @@
 ---
 title: "Projects"
+description: "งานอดิเรก"
 slug: "projects"
 published: true
 order: 2

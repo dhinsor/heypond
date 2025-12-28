@@ -143,6 +143,8 @@ pre {
 
 .page-nav-link:hover {
   color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .theme-toggle-container {
@@ -846,8 +848,8 @@ pre {
 /* Footer section */
 .home-footer {
   margin-top: 4rem;
-  padding-top: 2rem;
-  /*border-top: 1px solid var(--border-color);*/
+  /*padding-top: 2rem;
+  border-top: 1px solid var(--border-color);*/
   display: flex;
   justify-content: space-between;
   align-items: center;

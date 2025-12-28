@@ -8,8 +8,8 @@ export default function Blog() {
 
     return (
         <div className="blog-page">
-            <h1 className="page-title">Blog</h1>
-            <p className="home-intro">งานเขียนต่างๆที่ผมรู้สึกว่าดีพอที่จะเผยแพร่หรือไม่เขินอายที่จะให้คนอื่นอ่าน โดยพยายามอัปเดตทุกสัปดาห์</p>
+            <h1 className="page-title">All Blogs</h1>
+            <p className="home-intro">งานเขียนทั้งหมดผมบรรจงและตั้งใจเขียนขึ้นมาด้วยตัวเอง บทบาทหน้าที่ของ AI คือตำรวจตรวจคำผิดและ recheck ข้อมูลต่างๆแทนการค้นหาจาก Google</p>
             <section className="home-posts">
                 {posts === undefined ? null : posts.length === 0 ? (
                     <p className="no-posts">ยังไม่มีบทความที่นี่ ไว้กลับมาใหม่อีกครั้งนะ!</p>

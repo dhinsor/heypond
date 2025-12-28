@@ -47,6 +47,8 @@ interface ParsedPost {
 // Page frontmatter (for static pages like About, Projects, Contact)
 interface PageFrontmatter {
   title: string;
+  navTitle?: string; // Title for navigation bar
+  description?: string; // Page description
   slug: string;
   published: boolean;
   order?: number; // Display order in navigation
@@ -55,6 +57,8 @@ interface PageFrontmatter {
 interface ParsedPage {
   slug: string;
   title: string;
+  navTitle?: string;
+  description?: string;
   content: string;
   published: boolean;
   order?: number;
@@ -132,6 +136,8 @@ function parsePageFile(filePath: string): ParsedPage | null {
     return {
       slug: frontmatter.slug,
       title: frontmatter.title,
+      navTitle: frontmatter.navTitle,
+      description: frontmatter.description,
       content: content.trim(),
       published: frontmatter.published ?? true,
       order: frontmatter.order,

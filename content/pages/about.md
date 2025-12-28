@@ -1,5 +1,7 @@
 ---
-title: "About"
+title: "About me"
+navTitle: "About"
+description: "สวัสดีครับ ผมปอนด์ Product Designer ที่เกิดจากการเรียนรู้ด้วยตนเอง"
 slug: "about"
 published: true
 order: 1

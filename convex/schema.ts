@@ -31,6 +31,8 @@ export default defineSchema({
   pages: defineTable({
     slug: v.string(),
     title: v.string(),
+    navTitle: v.optional(v.string()), // Title for navigation bar (defaults to title)
+    description: v.optional(v.string()), // Page description
     content: v.string(),
     published: v.boolean(),
     order: v.optional(v.number()), // Display order in nav

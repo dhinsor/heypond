@@ -13,7 +13,6 @@ import type * as http from "../http.js";
 import type * as pages from "../pages.js";
 import type * as posts from "../posts.js";
 import type * as rss from "../rss.js";
-import type * as stats from "../stats.js";
 
 import type {
   ApiFromModules,
@@ -27,7 +26,6 @@ declare const fullApi: ApiFromModules<{
   pages: typeof pages;
   posts: typeof posts;
   rss: typeof rss;
-  stats: typeof stats;
 }>;
 
 /**

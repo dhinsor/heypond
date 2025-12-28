@@ -8,9 +8,9 @@ import ArrowLeft from "lucide-react/dist/esm/icons/arrow-left";
 import { useEffect } from "react";
 
 // Site configuration
-const SITE_URL = "https://markdowncms.netlify.app";
-const SITE_NAME = "Markdown Site";
-const DEFAULT_OG_IMAGE = "/images/og-default.svg";
+const SITE_URL = "https://heypond.netlify.app";
+const SITE_NAME = "Pond Narongrit";
+const DEFAULT_OG_IMAGE = "/images/og-image-default.png";
 
 export default function Post() {
   const { slug } = useParams<{ slug: string }>();
@@ -130,6 +130,9 @@ export default function Post() {
         <article className="post-article">
           <header className="post-header">
             <h1 className="page-title">{page.title}</h1>
+            {page.description && (
+              <p className="post-description">{page.description}</p>
+            )}
           </header>
 
           <BlogPost content={page.content} />

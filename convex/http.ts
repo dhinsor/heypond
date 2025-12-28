@@ -6,8 +6,8 @@ import { rssFeed, rssFullFeed } from "./rss";
 const http = httpRouter();
 
 // Site configuration
-const SITE_URL = process.env.SITE_URL || "https://markdowncms.netlify.app";
-const SITE_NAME = "Markdown Site";
+const SITE_URL = process.env.SITE_URL || "https://heypond.netlify.app";
+const SITE_NAME = "Pond Narongrit";
 
 // RSS feed endpoint (descriptions only)
 http.route({
@@ -72,7 +72,7 @@ http.route({
     const response = {
       site: SITE_NAME,
       url: SITE_URL,
-      description: "Developer and writer. Building with Convex and AI.",
+      description: "Pond's digital garden is covered with writings on topics such as Design, Tech, Philosophy, AI, and everything in between",
       posts: posts.map((post) => ({
         title: post.title,
         slug: post.slug,

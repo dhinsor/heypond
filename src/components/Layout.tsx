@@ -43,7 +43,7 @@ export default function Layout({ children }: LayoutProps) {
                 to={page.slug.startsWith("/") ? page.slug : `/${page.slug}`}
                 className="page-nav-link"
               >
-                {page.title}
+                {page.navTitle || page.title}
               </Link>
             ))}
         </nav>

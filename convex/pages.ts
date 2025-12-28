@@ -9,6 +9,7 @@ export const getAllPages = query({
       _id: v.id("pages"),
       slug: v.string(),
       title: v.string(),
+      navTitle: v.optional(v.string()),
       published: v.boolean(),
       order: v.optional(v.number()),
     }),
@@ -31,6 +32,7 @@ export const getAllPages = query({
       _id: page._id,
       slug: page.slug,
       title: page.title,
+      navTitle: page.navTitle,
       published: page.published,
       order: page.order,
     }));
@@ -47,6 +49,8 @@ export const getPageBySlug = query({
       _id: v.id("pages"),
       slug: v.string(),
       title: v.string(),
+      navTitle: v.optional(v.string()),
+      description: v.optional(v.string()),
       content: v.string(),
       published: v.boolean(),
       order: v.optional(v.number()),
@@ -67,6 +71,8 @@ export const getPageBySlug = query({
       _id: page._id,
       slug: page.slug,
       title: page.title,
+      navTitle: page.navTitle,
+      description: page.description,
       content: page.content,
       published: page.published,
       order: page.order,
@@ -81,6 +87,8 @@ export const syncPagesPublic = mutation({
       v.object({
         slug: v.string(),
         title: v.string(),
+        navTitle: v.optional(v.string()),
+        description: v.optional(v.string()),
         content: v.string(),
         published: v.boolean(),
         order: v.optional(v.number()),
@@ -112,6 +120,8 @@ export const syncPagesPublic = mutation({
         // Update existing page
         await ctx.db.patch(existing._id, {
           title: page.title,
+          navTitle: page.navTitle,
+          description: page.description,
           content: page.content,
           published: page.published,
           order: page.order,

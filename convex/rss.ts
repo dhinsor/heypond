@@ -2,10 +2,10 @@ import { httpAction } from "./_generated/server";
 import { api } from "./_generated/api";
 
 // Site configuration for RSS feed
-const SITE_URL = process.env.SITE_URL || "https://markdowncms.netlify.app";
-const SITE_TITLE = "Markdown Site";
+const SITE_URL = process.env.SITE_URL || "https://heypond.netlify.app";
+const SITE_TITLE = "Pond Narongrit";
 const SITE_DESCRIPTION =
-  "An open source markdown site powered by Convex and Netlify.";
+  "Pond's digital garden is covered with writings on topics such as Design, Tech, Philosophy, AI, and everything in between";
 
 // Escape XML special characters
 function escapeXml(text: string): string {
